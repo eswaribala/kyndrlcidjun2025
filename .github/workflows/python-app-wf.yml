@@ -29,4 +29,4 @@ jobs:
     
     - name: Run the pythoncode
       run: |
-        python ./Day1/currentdateime.py
+        python Day1/currentdateime.py
