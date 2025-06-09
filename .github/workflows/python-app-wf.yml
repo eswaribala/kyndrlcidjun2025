@@ -6,7 +6,21 @@ name: Python application
 on:
   push:
     branches: [ "master" ]
+  workflow_dispatch:  
+   inputs:
+     environment:
+     foldername:
+       description: 'name of the referred folder'
+       required: true
+       default: 'day1'
+    
 jobs:
+  print-inputs:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Show the input values
+      run: |
+        echo "Folder name = ${{github.events.inputs.foldername}}
   build:
     runs-on: ubuntu-latest
     steps:
