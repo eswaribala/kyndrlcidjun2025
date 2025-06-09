@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Use global environment variable
-        run: echo $FOLDERNAME
+        run: echo "Folder Name:$FOLDERNAME"
   build:
     runs-on: ubuntu-latest
     steps:
