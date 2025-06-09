@@ -20,7 +20,7 @@ jobs:
    steps:
     - name: Show the input values
       run: |
-        echo "Folder name = ${{github.events.inputs.foldername}}
+        echo "Folder name = ${{github.events.inputs.foldername}}"
   build:
     runs-on: ubuntu-latest
     steps:
