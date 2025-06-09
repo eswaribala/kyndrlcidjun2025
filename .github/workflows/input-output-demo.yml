@@ -1,4 +1,6 @@
 name: Input Credit Card No
+permissions:
+ contents: write
 on: 
  workflow_dispatch:
    inputs:
@@ -15,8 +17,7 @@ on:
        - visa
        - amex
       default: master 
-permissions:
- contents: write
+
 jobs:
  validate-length:
   runs-on: ubuntu-latest
