@@ -1,0 +1,10 @@
+kyndryl
+9.30 am to 5.30 pm
+
+9.30 am to 11.00 am session 1
+11.00 am to 11.15 am Tea Break
+11.45 am to 12.30 pm session 2
+12.30 pm to 1.30 pm Lunch Break
+1.30 pm to 3.30 pm session 3
+3.30 pm to 3.45 pm Tea Break
+3.45 pm to 5.30 pm session 4
