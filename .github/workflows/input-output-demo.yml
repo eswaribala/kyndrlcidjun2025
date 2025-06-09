@@ -39,7 +39,7 @@ jobs:
        echo "Card No: ${{github.event.inputs.cardno}}" >> cardlog.log
        echo "Card Type ${{github.event.inputs.cardtype}}" >> cardlog.log
     - name: Show the contents from log file
-      run: cat carlog.log
+      run: cat cardlog.log
     - name: Upload the log file
       uses: actions/upload-artifact@v4
       with:
