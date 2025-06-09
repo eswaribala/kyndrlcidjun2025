@@ -7,7 +7,7 @@ on:
   push:
     branches: [ "master" ]
 env:
-  FOLDERNAME: 'Day1'  
+  FOLDERNAME: 'day1'  
 jobs:
   example_job:
     runs-on: ubuntu-latest
@@ -29,4 +29,4 @@ jobs:
     
     - name: Run the pythoncode
       run: |
-        python Day1/currentdateime.py
+        python day1/currentdateime.py
