@@ -15,6 +15,8 @@ on:
        - visa
        - amex
       default: master 
+permissions:
+ contents: write
 jobs:
  validate-length:
   runs-on: ubuntu-latest
@@ -38,6 +40,7 @@ jobs:
       uses: actions/checkout@v4
       with:
        ref: master
+       token: ${{secrets.GITHUBTOKEN}}
     - name: Print the input values
       run: |
        echo "Card No: ${{github.event.inputs.cardno}}" >> cardlog.log
