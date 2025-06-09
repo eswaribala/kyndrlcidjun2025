@@ -25,8 +25,8 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip        
-        if [ -f ./${FOLDERNAME}/requirements.txt ]; then pip install -r ./${FOLDERNAME}/requirements.txt; fi
+        if [ -f ${FOLDERNAME}/requirements.txt ]; then pip install -r ${FOLDERNAME}/requirements.txt; fi
     
     - name: Run the pythoncode
       run: |
-        python ./${FOLDERNAME}/currentdateime.py
+        python ${FOLDERNAME}/currentdateime.py
