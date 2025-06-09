@@ -40,7 +40,7 @@ jobs:
       uses: actions/checkout@v4
       with:
        ref: master
-       token: ${{secrets.GITHUBTOKEN}}
+       token: ${{secrets.GITTOKEN}}
     - name: Print the input values
       run: |
        echo "Card No: ${{github.event.inputs.cardno}}" >> cardlog.log
