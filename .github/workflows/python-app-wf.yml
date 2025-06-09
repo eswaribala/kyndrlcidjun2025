@@ -8,12 +8,19 @@ on:
     branches: [ "master" ]
 env:
   FOLDERNAME: 'day1'  
+  GITFOLDERNAME: ${{vars.FOLDERNAME}}
+  
 jobs:
-  example_job:
+  local_var_job:
     runs-on: ubuntu-latest
     steps:
       - name: Use global environment variable
         run: echo "Folder Name:$FOLDERNAME"
+  github_var_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use github environment variable
+        run: echo "Folder Name:$GITFOLDERNAME"
   build:
     runs-on: ubuntu-latest
     steps:
