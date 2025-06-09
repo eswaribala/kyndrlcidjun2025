@@ -6,9 +6,14 @@ name: Python application
 on:
   push:
     branches: [ "master" ]
- 
+env:
+  FOLDERNAME: 'Day1'  
 jobs:
-  
+  example_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use global environment variable
+        run: echo $FOLDERNAME
   build:
     runs-on: ubuntu-latest
     steps:
