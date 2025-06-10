@@ -10,9 +10,9 @@ on:
         default: '.env.dev'
         type: choice
         options:
-          - .env.dev
-          - .env.test
-          - .env.prod
+          - env.dev
+          - env.test
+          - env.prod
 
   
     
@@ -48,6 +48,6 @@ jobs:
       - name: Run Docker Compose
         run: |
           ssh -i ec2_key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_HOST }} "
-          docker-compose --env-file=./trainingjun2025/employeeapidocker/.env.dev up -d --build"
+          docker-compose --env-file=./trainingjun2025/employeeapidocker/env.dev up -d --build"
 
      
