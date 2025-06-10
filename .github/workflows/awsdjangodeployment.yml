@@ -13,8 +13,7 @@ on:
           - .env.test
           - .env.prod
 
-  push:
-    branches: [ master ]
+  
     
 jobs:
   deploy:
@@ -38,8 +37,8 @@ jobs:
 
       - name: Set environment variable for Docker Compose
         run: | 
-          ssh -i ec2_key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_HOST }} 
-          "echo "DJANGO_ENV=${{ github.event.inputs.env }}" >> $GITHUB_ENV"
+          ssh -i ec2_key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_HOST }} " 
+           echo "DJANGO_ENV=${{ github.event.inputs.env }}" >> $GITHUB_ENV"
 
       - name: Run Docker Compose
         run: |
