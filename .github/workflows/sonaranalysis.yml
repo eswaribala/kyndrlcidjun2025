@@ -1,5 +1,4 @@
 name: Sonar Cloud Code Analysis
-
 on:
  push:
   branches:
