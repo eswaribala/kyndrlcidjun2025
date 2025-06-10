@@ -32,4 +32,4 @@ jobs:
     
       - name: Run the pythoncode
         run: |
-          python ${FOLDERNAME}/currentdateime.py
+          python ${FOLDERNAME}/currentdatetime.py
