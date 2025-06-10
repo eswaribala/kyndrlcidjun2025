@@ -9,8 +9,8 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /app
 
 # Install dependencies
-COPY requirements.txt /app/
-RUN pip install -r requirements.txt
+COPY employeeapidocker/requirements.txt /app/
+RUN pip install -r employeeapidocker/requirements.txt
 
 # Copy the project code into the container
 COPY . /app/
