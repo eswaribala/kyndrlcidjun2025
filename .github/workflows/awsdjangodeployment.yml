@@ -51,7 +51,8 @@ jobs:
           ls
           ssh -i ec2_key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_HOST }} "
           pwd
-          ls"
-          #docker-compose --env-file=./trainingjun2025/employeeapidocker/env.dev up -d --build"
+          ls
+          cd  ./trainingjun2025/employeeapidocker
+          docker-compose --env-file= env.dev up -d --build"
 
      
