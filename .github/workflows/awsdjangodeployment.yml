@@ -53,6 +53,6 @@ jobs:
           pwd
           ls
           cd  ./trainingjun2025/employeeapidocker
-          docker-compose --env-file= env.dev up -d --build"
+          sudo docker-compose --env-file=env.dev up -d --build"
 
      
