@@ -4,7 +4,7 @@ import re
 import io
 import sys
 import pytest
-from src.your_module import validate  # adjust import to match your project structure
+ # adjust import to match your project structure
 
 # Capture stdout helper
 class CapturePrints:
