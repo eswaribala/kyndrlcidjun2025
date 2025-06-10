@@ -1,5 +1,6 @@
 name: Deploy Django App to EC2
 
+
 on:
   workflow_dispatch:
     inputs:
