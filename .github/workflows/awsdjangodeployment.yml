@@ -10,9 +10,9 @@ on:
         default: '.env.dev'
         type: choice
         options:
-          - .env.dev
-          - .env.test
-          - .env.prod
+          - env.dev
+          - env.test
+          - env.prod
 
   
     
@@ -47,7 +47,13 @@ jobs:
 
       - name: Run Docker Compose
         run: |
+          pwd
+          ls
           ssh -i ec2_key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_HOST }} "
-          docker-compose --env-file=./trainingjun2025/employeeapidocker/.env.dev up -d --build"
+          pwd
+          ls
+          cd  ./trainingjun2025/employeeapidocker
+          #docker network create mtsnetwork
+          sudo docker-compose --env-file=env.dev up -d --build"
 
      
