@@ -1,0 +1,53 @@
+# .github/workflows/parallel-python-matrix.yml
+name: Parallel Python Matrix
+
+on:
+  push:
+    #branches: [ master ]  
+    paths:
+      - ./day1/**
+jobs:
+  generate-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Generate list of files
+        #since the step is referred in another place uniquess identified by id
+        id: set-matrix
+        run: |
+         files=$(find ./day1 -type f -name "*.py" | jq -R -s -c 'split("\n"[:-1]')
+         echo "matrix=$files"
+         echo "matrix=$files" >> $GITHUB_OUTPUT
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/day1/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-  
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+         
+      - name: Install dependencies
+        run: |
+          pip install -r ./day1/requirements.txt'
+  run-job:
+    needs: generate-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+       file: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+             
+      - name: Run Python file
+        run: |
+          echo "Running file: ${{ matrix.file }}"
+          python ${{ matrix.file }}
