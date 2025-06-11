@@ -3,12 +3,25 @@ permissions:
  contents: write
 on: 
  workflow_dispatch:
-
+   inputs:
+    cardno: 
+      description: 'Enter Credit Card No'
+      required: true
+      default: '123456789012345'
+    cardtype:
+      description: 'Choose Card Type'
+      required: true
+      type: choice
+      options:
+       - master
+       - visa
+       - amex
+      default: master 
 jobs:
   call-reusable:
    uses: ./.github/workflows/reusablewf.yml
    with: 
-     cardno: 45843858438
-     cardtype: visa
+     cardno: "${{github.event.inputs.cardno}}" 
+     cardtype: "${{github.event.inputs.cardype}}" 
      
 
