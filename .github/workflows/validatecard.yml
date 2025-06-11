@@ -1,0 +1,11 @@
+name: Input Credit Card No
+permissions:
+ contents: write
+on: 
+ workflow_dispatch:
+
+jobs:
+  call-reusable:
+   uses: ./.github/workflows/reusable.yml
+     
+
