@@ -25,4 +25,4 @@ jobs:
           python -m pip install --upgrade pip
 
       - name: Run cleanup script
-        run: python day1/currentdateime.py
+        run: python day1/currentdatetime.py
