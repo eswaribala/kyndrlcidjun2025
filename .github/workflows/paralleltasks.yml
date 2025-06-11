@@ -1,6 +1,5 @@
 # .github/workflows/parallel-python-matrix.yml
 name: Parallel Python Matrix
-
 on:
   push:
     branches: [ master ]  
