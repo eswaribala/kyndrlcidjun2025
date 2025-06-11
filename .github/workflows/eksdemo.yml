@@ -1,5 +1,4 @@
-name: EKS Image Deployment
- 
+name: EKS Image Deployment 
 on:
   push:
     branches:
