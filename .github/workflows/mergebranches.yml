@@ -31,8 +31,9 @@ jobs:
         run: |
           git switch master
           git merge origin/feature2 -m "Auto-merge feature2 into master" --allow-unrelated-histories
-          git add .
-          git commit -m "updated"
+          #git add .
+          #git commit -m "updated"
+          git rebase master
           git push origin master
           git branch -d feature2
           git push origin -d feature2
