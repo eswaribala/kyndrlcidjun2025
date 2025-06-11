@@ -43,7 +43,7 @@ jobs:
      run: cat cardlog.log
    - name: Set Output Values
      id: set-output
-     run: echo "message=hi" >> $GITHUB_OUTPUT
+     run: echo "message=${cat cardlog.log}" >> $GITHUB_OUTPUT
    
 
 
