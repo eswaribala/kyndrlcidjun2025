@@ -19,7 +19,7 @@ jobs:
         #since the step is referred in another place uniquess identified by id
         id: set-matrix
         run: |
-         files=$( find ./day1 -type f -name "*.py" | jq -R -s -c 'split("\n"[:-1]' )
+         files=$( find ./day1 -type f -name "*.py" | jq -R -s -c 'split( "\n"[ :-1 ]' )
          echo "matrix=$files"
          echo "matrix=$files" >> $GITHUB_OUTPUT
       - name: Cache pip packages
