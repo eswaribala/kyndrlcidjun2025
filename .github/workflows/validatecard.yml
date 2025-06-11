@@ -1,4 +1,4 @@
-name: Input Credit Card No
+name: Invoke External Work Flow
 permissions:
  contents: write
 on: 
