@@ -1,7 +1,7 @@
 name: Auto Merge dev into main
 
 on:
-  workflow_dispatch:   # manually trigger
+  #workflow_dispatch:   # manually trigger
   push:
     branches:
       - feature2            # or run on dev pushes
@@ -30,7 +30,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITTOKEN }}
         run: |
           git switch master
-          git merge origin/feature2 -m "Auto-merge feature2 into master" --allow-unrelated-histories
+          git merge feature2 -m "Auto-merge feature2 into master" --allow-unrelated-histories
           #git add .
           #git commit -m "updated"
           git rebase master
