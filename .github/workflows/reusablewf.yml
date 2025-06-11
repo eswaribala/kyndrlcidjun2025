@@ -18,4 +18,20 @@ jobs:
    steps:
     - run: echo "My credit card no ${{ inputs.cardno }}"
     - run: echo "Credit card type ${{ inputs.cardtype }}"
+  validate-length:
+   runs-on: ubuntu-latest
+   steps:
+   - name: Check Credit Card Number Of Digits and Push to Log file
+     run: |
+       echo "Starting the validation process" > cardlog.log
+       cardNo="${{ inputs.cardno }}" 
+       echo "Card No:$cardNo" >> cardlog.log
+       len=${#cardNo}
+       echo "Length:$len" >> cardlog.log
+       if [ $len -lt 10 ]; then
+         echo "Card No is invalid" >> cardlog.log
+       else
+         echo "Card No is Valid" >> cardlog.log
+       fi   
+
    
