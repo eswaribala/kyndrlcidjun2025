@@ -17,5 +17,5 @@ jobs:
    runs-on: ubuntu-latest
    steps:
     - run: echo "My credit card no ${{ inputs.cardno }}"
-    - run: echo "Credi card type ${{ inputs.cardtype }}"
+    - run: echo "Credit card type ${{ inputs.cardtype }}"
    
