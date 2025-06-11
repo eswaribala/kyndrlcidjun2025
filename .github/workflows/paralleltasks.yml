@@ -3,9 +3,9 @@ name: Parallel Python Matrix
 
 on:
   push:
-    #branches: [ master ]  
-    paths:
-      - ./day1/**
+    branches: [ master ]  
+    #paths:
+      #- ./day1/**
 jobs:
   generate-matrix:
     runs-on: ubuntu-latest
