@@ -42,7 +42,7 @@ jobs:
    outputs: 
      message: ${{ outputs.message }}
      run: |
-          message=cat card.log >> $GITHUB_OUTPUT
+          echo "message=HI" >> $GITHUB_OUTPUT
 
    
        
