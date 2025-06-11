@@ -40,7 +40,7 @@ jobs:
    - name: Show the contents from log file
      run: cat cardlog.log
    outputs: 
-     message: ${{ steps.set-output.outputs.message }}
+     message: ${{ outputs.message }}
      run: |
           message=cat card.log >> $GITHUB_OUTPUT
 
