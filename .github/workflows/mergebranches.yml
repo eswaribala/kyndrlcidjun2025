@@ -35,5 +35,5 @@ jobs:
           #git commit -m "updated"
           git rebase master
           git push origin master
-          git branch -d feature2
-          git push origin -d feature2
+          git branch -d origin/feature2
+          git push origin -d origin/feature2
