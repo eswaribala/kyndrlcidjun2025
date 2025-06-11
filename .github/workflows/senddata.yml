@@ -30,7 +30,9 @@ jobs:
    needs: call-reusable
    steps:
      - name: Print return message
-       run: ${{ needs.call-reusable.outputs.message }}
+       run: |
+         date
+        
 
     
      
