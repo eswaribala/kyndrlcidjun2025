@@ -22,6 +22,6 @@ jobs:
    uses: ./.github/workflows/reusablewf.yml
    with: 
      cardno: "${{github.event.inputs.cardno}}" 
-     cardtype: "${{github.event.inputs.cardype}}" 
+     cardtype: "${{github.event.inputs.cardtype}}" 
      
 
