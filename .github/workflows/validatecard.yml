@@ -8,7 +8,7 @@ jobs:
   call-reusable:
    uses: ./.github/workflows/reusablewf.yml
    with: 
-     cardo: 45843858438
+     cardno: 45843858438
      cardtype: visa
      
 
