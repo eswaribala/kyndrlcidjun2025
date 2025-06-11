@@ -39,16 +39,12 @@ jobs:
        fi   
    - name: Show the contents from log file
      run: cat cardlog.log
-  return-data:
-   runs-on: ubuntu-latest
    outputs: 
      message: ${{ steps.set-output.outputs.message }}
-   steps:
-     - name: Set Output Value
-       id:  set-output
-       run: |
+     run: |
           message=cat card.log >> $GITHUB_OUTPUT
 
+   
        
        
 
