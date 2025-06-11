@@ -1,0 +1,33 @@
+name: Build and Push Docker Image
+ 
+on:
+  push:
+    branches:
+      - master  # or 'master'
+      
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+                
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: v1.29.0
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: Configure Kubeconfig
+        run: |
+          mkdir -p ~/.kube
+          echo "${{ secrets.KUBECONFIG_CONTENT }}" > ~/.kube/config
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f ./postgres-pv.yaml
+          kubectl apply -f ./postgres-deployment.yaml
+          kubectl apply -f ./deployment-v2.yaml
