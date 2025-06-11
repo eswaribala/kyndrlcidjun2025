@@ -3,8 +3,7 @@ name: EKS Image Deployment
 on:
   push:
     branches:
-      - master  # or 'master'
-      
+      - master  # or 'master'      
 
 jobs:
   build:
