@@ -6,12 +6,12 @@ on:
       description: 'Enter Credit Card No'
       type: string
       required: true
-      default: '123456789012345'
+      #default: '123456789012345'
     cardtype:
       description: 'Choose Card Type'
       required: true
       type: string
-      default: 'master'
+      #default: 'master'
 jobs:
   display:
    runs-on: ubuntu-latest
