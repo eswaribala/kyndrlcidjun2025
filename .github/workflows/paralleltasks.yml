@@ -3,7 +3,7 @@ name: Parallel Python Matrix
 
 on:
   push:
-    branches: [ master ]  
+    #branches: [ master ]  
     paths:
       - ./day1/**
 jobs:
