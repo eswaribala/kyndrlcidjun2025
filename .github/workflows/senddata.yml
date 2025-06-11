@@ -20,7 +20,7 @@ on:
 jobs:
   call-reusable:
    uses: ./.github/workflows/reusablewf.yml
-   name: wf2job
+   
    with: 
      cardno: "${{ github.event.inputs.cardno }}" 
      cardtype: "${{ github.event.inputs.cardtype }}" 
